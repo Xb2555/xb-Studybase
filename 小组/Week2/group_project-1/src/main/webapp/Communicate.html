@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Communicate with HTML</title>
+</head>
+<body>
+<h2>Get Request</h2>
+<form action="/group_project_1_war/Login" method="get">
+    <input type="text" name="name">
+    <input type="submit" value="Submit Get">
+</form>
+<h2>Post Request</h2>
+<form action="/group_project_1_war/Login" method="post">
+    <input type="text" name="name">
+    <input type="submit" value="Submit Post">
+</form>
+
+<!--Put 请求-->
+<h2>Put Request</h2>
+<form action="/group_project_1_war/Login" method="put">
+    <button id="put request">PUT</button>
+</form>
+
+<!--delete 请求-->
+<h2>Delete Request</h2>
+<form action="/group_project_1_war/Login" method="DELETE">
+    <input type="text" id="id" placeholder="Enter ID to delete">
+    <button id="deleteButton">Delete</button>
+</form>
+</body>
+</html>
