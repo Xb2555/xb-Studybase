@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>add</title>
+</head>
+<body>
+<div id="app" >
+    <form action="" method="post">
+    <h3>添加品牌</h3>
+      品牌名称：<input id="brand_Name" v-model="brand.brand_Name" name="brand_Name"><br>
+      企业名称：<input id="company_Name" v-model="brand.company_Name" name="company_Name"><br>
+      排序：<input id="ordered" v-model="brand.ordered" name="ordered" ><br>
+      <button id="update" type="button" @click="submitForm">提交</button><br>
+    </form>
+</div>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script>
+  new Vue({
+    el:"#app",
+    data(){
+      return{
+        brand:{},
+      }
+    },
+    methods:{
+      submitForm(){
+        //发送ajax请求
+          const that = this;
+          axios({
+          method:"post",
+          url:"http://localhost:8080/group_project_1_war/add",
+          data:that.brand//提交的表单
+        }).then(resp=>{
+          if(resp.data === "success"){
+            location.href="http://localhost:8080/group_project_1_war/brand.html";
+          }
+        })
+      }
+    }
+  })
+</script>
+</body>
+
+</html>

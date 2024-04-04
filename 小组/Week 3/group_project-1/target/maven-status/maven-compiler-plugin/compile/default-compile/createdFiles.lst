@@ -1,0 +1,7 @@
+com\group\service\impl\BrandServicempl.class
+com\group\mapper\BrandMapper.class
+com\group\service\BrandService.class
+com\group\pojo\Brand.class
+com\group\web\SelectAllServlet.class
+com\group\utils\sqlSessionFactoryUtil.class
+com\group\web\LoginServlet.class

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <div v-for="(brand,i) in brands">
+        <td>{{i+1}}</td>
+        <td>{{brand.brand_Name}}</td>
+        <td>{{brand.company_Name}}</td>
+        <td>{{brand.ordered}}</td>
+    </div>
+    <input type="button" value="点我返回主页面" onclick="location.href='http://localhost:8080/group_project_1_war/Communicate.html'">
+</div>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="js/vue.js"></script>
+<script>
+
+    new Vue({
+        el:"#app",
+        data(){
+            return{
+                brands:[]
+            }
+        },
+        mounted(){
+            const that = this;
+            axios.get("http://localhost:8080/group_project_1_war/selectAll").then(res=>{
+                that.brands=res.data;
+                this.$forceUpdate();
+            })
+        }
+    })
+</script>
+</body>
+</html>
