@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>欢迎注册</title>
+</head>
+<body>
+<div id="app">
+<form action="" method="post">
+    用户名：<input id="id" v-model="User.id" name="id"><br>
+    密码：<input id="password" v-model="User.password" name="password"><br>
+    <button id="register" type="button" @click="re">注册</button>
+    <button id="back" type="button" onclick="location.href='http://localhost:8080/Login_Register_war/home.html'">点我返回主页面</button>
+</form>
+</div>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="js/vue.js"></script>
+<script>
+    new Vue({
+        el:"#app",
+        data(){
+            return{
+                User:{},
+            }
+        },
+        methods:{
+            re(){
+                const that=this;
+                axios({
+                    method:"post",
+                    url:"http://localhost:8080/Login_Register_war/User?methodName=Register",
+                    data:that.User,
+                }).then(resp=>{
+                    if(resp.data==="succeed"){
+                        location.href="http://localhost:8080/Login_Register_war/RegisterSuccess.html";
+                    }else{
+                        location.href="http://localhost:8080/Login_Register_war/RegisterFailed.html";
+                    }
+                })
+            }
+        }
+    })
+</script>
+</body>
+</html>

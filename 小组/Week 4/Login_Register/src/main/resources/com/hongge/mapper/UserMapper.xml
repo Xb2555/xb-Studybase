@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hongge.mapper.UserMapper">
+    <!--1.用用户名和密码查找用户-->
+    <select id="select" resultType="com.hongge.pojo.User">
+        select *from tb_user where id=#{id} and password=#{password};
+    </select>
+    <!--2.注册功能-->
+    <insert id="register">
+        insert into tb_user values(#{id},#{password});
+    </insert>
+</mapper>

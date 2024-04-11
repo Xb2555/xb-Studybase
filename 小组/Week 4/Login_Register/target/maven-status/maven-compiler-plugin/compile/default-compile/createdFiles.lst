@@ -1,0 +1,7 @@
+com\hongge\mapper\UserMapper.class
+com\hongge\web\BaseServlet.class
+com\hongge\utils\sqlSessionFactoryUtil.class
+com\hongge\pojo\User.class
+com\hongge\service\UserService.class
+com\hongge\service\UserServicempl.class
+com\hongge\web\UserServlet.class
